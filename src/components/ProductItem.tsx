@@ -16,7 +16,7 @@ export default function ProductCard({ produto, onAdd }: ProductCardProps) {
         onClick={() => onAdd(produto)}
         className="mt-3 bg-red-600 hover:bg-red-700 text-white py-2 rounded transition"
       >
-        Adicionar ao Carrinho
+        Carrinho
       </button>
     </div>
   );

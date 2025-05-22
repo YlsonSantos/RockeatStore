@@ -23,7 +23,7 @@ export default function Navbar({ carrinhoCount }: NavbarProps) {
   const toggleMenu = () => setMenuAberto(!menuAberto);
 
   return (
-    <nav className="bg-white p-4 flex items-center text-red-600 border-b border-black relative">
+    <nav className="bg-white py-6 px-4 flex items-center text-red-600 border-b border-black relative">
       <Link
         to="/"
         className="flex-shrink-0 px-3 py-1 rounded flex items-center mr-4"
@@ -39,7 +39,11 @@ export default function Navbar({ carrinhoCount }: NavbarProps) {
             className="p-2 rounded hover:bg-red-600 hover:text-white transition-colors focus:outline-none flex-shrink-0"
             aria-label="Abrir menu"
           >
-            {menuAberto ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {menuAberto ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
@@ -56,9 +60,8 @@ export default function Navbar({ carrinhoCount }: NavbarProps) {
               </Link>
             ))}
           </div>
-
-          <div className="flex items-center space-x-4 whitespace-nowrap ml-6 min-w-0">
-            <span className="px-3 py-1 rounded">Olá, bem vindo</span>
+          <div className="flex items-center gap-2 ml-auto whitespace-nowrap relative overflow-hidden">
+            <span className="px-2 py-1 rounded text-sm">Olá, bem vindo</span>
 
             <Link
               to="/cart"
@@ -68,7 +71,7 @@ export default function Navbar({ carrinhoCount }: NavbarProps) {
             >
               <ShoppingCart className="w-6 h-6" />
               {carrinhoCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-yellow-400 text-black rounded-full px-2 text-xs font-bold">
+                <span className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 bg-yellow-400 text-black rounded-full px-1.5 text-[10px] font-bold leading-tight">
                   {carrinhoCount}
                 </span>
               )}

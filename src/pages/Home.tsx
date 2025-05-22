@@ -7,8 +7,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface HomeProps {
   adicionarAoCarrinho: (produto: Produto) => void;
-  quantidadeCarrinho: number;
-  nomeCliente: string;
+  carrinhoCount: number;
 }
 
 const categorias = [
@@ -33,8 +32,7 @@ const banners = [
 
 export default function Home({
   adicionarAoCarrinho,
-  quantidadeCarrinho,
-  nomeCliente,
+  carrinhoCount,
 }: HomeProps) {
   const [indices, setIndices] = useState<Record<string, number>>(() =>
     categorias.reduce((acc, c) => ({ ...acc, [c]: 0 }), {})
@@ -96,10 +94,7 @@ export default function Home({
 
   return (
     <>
-      <Navbar
-        nomeCliente={nomeCliente}
-        quantidadeCarrinho={quantidadeCarrinho}
-      />
+      <Navbar carrinhoCount={carrinhoCount} />
 
       <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-96 overflow-hidden mb-6">
         {banners.map((banner, index) => (
@@ -217,7 +212,6 @@ export default function Home({
           produto={produtoModal}
           onClose={fecharModal}
           adicionarAoCarrinho={adicionarAoCarrinho}
-          botaoClassName="mt-6 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded transition w-40 active:opacity-70"
         />
       )}
     </>

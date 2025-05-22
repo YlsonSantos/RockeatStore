@@ -3,13 +3,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
-import Footer from "./components/Footer"; 
+import Footer from "./components/Footer";
 
 import type { Produto } from "./types";
 
 export default function App() {
   const [carrinho, setCarrinho] = useState<(Produto & { quantidade: number })[]>([]);
-  const nomeCliente = "Ylson Santos";
 
   function adicionarAoCarrinho(produto: Produto) {
     setCarrinho((oldCarrinho) => {
@@ -43,8 +42,7 @@ export default function App() {
           element={
             <Home
               adicionarAoCarrinho={adicionarAoCarrinho}
-              quantidadeCarrinho={quantidadeTotal}
-              nomeCliente={nomeCliente}
+              carrinhoCount={quantidadeTotal} // Renomeado aqui
             />
           }
         />
@@ -54,7 +52,7 @@ export default function App() {
             <Cart
               carrinho={carrinho}
               remover={removerDoCarrinho}
-              nomeCliente={nomeCliente}
+              carrinhoCount={quantidadeTotal} // Renomeado aqui
             />
           }
         />

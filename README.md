@@ -31,19 +31,19 @@ RocketCommerce é uma aplicação de e-commerce simples e funcional feita com Re
 ```bash
 git clone https://github.com/YlsonSantos/rocketcommerce.git
 cd rocketcommerce
-
+  ```
 2. Instale as dependências com PNPM:
 
 ```bash
 pnpm install
-
+  ```
 3. Inicie o servidor de desenvolvimento:
 
 ```bash
 pnpm run dev
-
+  ```
 4. Abra o navegador em `http://localhost:3000` para acessar a aplicação.
-
+  ```
 
 ## Como usar
 

@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { ShoppingCart, Menu, X } from "lucide-react";
 
 interface NavbarProps {
-  nomeCliente: string;
-  quantidadeCarrinho: number;
+  carrinhoCount: number; // removido clienteNome daqui
 }
 
 const categorias = [
@@ -18,7 +17,7 @@ const categorias = [
   "Automotivo",
 ];
 
-export default function Navbar({ nomeCliente, quantidadeCarrinho }: NavbarProps) {
+export default function Navbar({ carrinhoCount }: NavbarProps) { // removido clienteNome daqui
   const [menuAberto, setMenuAberto] = useState(false);
 
   const toggleMenu = () => setMenuAberto(!menuAberto);
@@ -57,7 +56,7 @@ export default function Navbar({ nomeCliente, quantidadeCarrinho }: NavbarProps)
           </div>
 
           <div className="flex items-center space-x-4 whitespace-nowrap ml-6">
-            <span className="px-3 py-1 rounded">{`Olá, ${nomeCliente}`}</span>
+            <span className="px-3 py-1 rounded">Olá, bem vindo</span>
 
             <Link
               to="/cart"
@@ -66,9 +65,9 @@ export default function Navbar({ nomeCliente, quantidadeCarrinho }: NavbarProps)
               onClick={() => setMenuAberto(false)}
             >
               <ShoppingCart className="w-6 h-6" />
-              {quantidadeCarrinho > 0 && (
+              {carrinhoCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-yellow-400 text-black rounded-full px-2 text-xs font-bold">
-                  {quantidadeCarrinho}
+                  {carrinhoCount}
                 </span>
               )}
             </Link>
@@ -90,7 +89,7 @@ export default function Navbar({ nomeCliente, quantidadeCarrinho }: NavbarProps)
           ))}
 
           <div className="flex items-center justify-between border-t pt-4">
-            <span className="px-3 py-1 rounded">{`Olá, ${nomeCliente}`}</span>
+            <span className="px-3 py-1 rounded">Olá, seja bem vindo</span>
 
             <Link
               to="/cart"
@@ -99,9 +98,9 @@ export default function Navbar({ nomeCliente, quantidadeCarrinho }: NavbarProps)
               onClick={() => setMenuAberto(false)}
             >
               <ShoppingCart className="w-6 h-6" />
-              {quantidadeCarrinho > 0 && (
+              {carrinhoCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-yellow-400 text-black rounded-full px-2 text-xs font-bold">
-                  {quantidadeCarrinho}
+                  {carrinhoCount}
                 </span>
               )}
             </Link>

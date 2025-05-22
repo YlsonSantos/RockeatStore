@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ShoppingCart, Menu, X } from "lucide-react";
 
 interface NavbarProps {
-  carrinhoCount: number; // removido clienteNome daqui
+  carrinhoCount: number; 
 }
 
 const categorias = [
@@ -17,32 +17,35 @@ const categorias = [
   "Automotivo",
 ];
 
-export default function Navbar({ carrinhoCount }: NavbarProps) { // removido clienteNome daqui
+export default function Navbar({ carrinhoCount }: NavbarProps) {
   const [menuAberto, setMenuAberto] = useState(false);
 
   const toggleMenu = () => setMenuAberto(!menuAberto);
 
   return (
-    <nav className="bg-white p-4 flex flex-wrap items-center text-red-600 border-b border-black">
+    <nav className="bg-white p-4 flex items-center text-red-600 border-b border-black relative">
+      
       <Link
         to="/"
-        className="px-3 py-1 rounded flex items-center mr-4"
+        className="flex-shrink-0 px-3 py-1 rounded flex items-center mr-4"
         onClick={() => setMenuAberto(false)}
       >
         <img src="/RocketStore.png" alt="Rocket Store" className="h-[60px]" />
       </Link>
 
-      <div className="flex flex-grow justify-between items-center max-w-7xl mx-auto w-full md:ml-4">
-        <button
-          onClick={toggleMenu}
-          className="md:hidden p-2 rounded hover:bg-red-600 hover:text-white transition-colors focus:outline-none"
-          aria-label="Abrir menu"
-        >
-          {menuAberto ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+      <div className="flex flex-grow items-center max-w-7xl mx-auto w-full min-w-0">
+        <div className="flex md:hidden flex-grow justify-end">
+          <button
+            onClick={toggleMenu}
+            className="p-2 rounded hover:bg-red-600 hover:text-white transition-colors focus:outline-none flex-shrink-0"
+            aria-label="Abrir menu"
+          >
+            {menuAberto ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
 
-        <div className="hidden md:flex flex-wrap gap-4 items-center justify-between w-full">
-          <div className="flex flex-wrap gap-4">
+        <div className="hidden md:flex flex-wrap gap-4 items-center justify-between w-full overflow-x-auto whitespace-nowrap min-w-0">
+          <div className="flex flex-wrap gap-4 min-w-0">
             {categorias.map((categoria) => (
               <Link
                 key={categoria}
@@ -55,7 +58,7 @@ export default function Navbar({ carrinhoCount }: NavbarProps) { // removido cli
             ))}
           </div>
 
-          <div className="flex items-center space-x-4 whitespace-nowrap ml-6">
+          <div className="flex items-center space-x-4 whitespace-nowrap ml-6 min-w-0">
             <span className="px-3 py-1 rounded">Olá, bem vindo</span>
 
             <Link
@@ -76,7 +79,7 @@ export default function Navbar({ carrinhoCount }: NavbarProps) { // removido cli
       </div>
 
       {menuAberto && (
-        <div className="md:hidden w-full mt-2 bg-white p-4 rounded shadow-md flex flex-col gap-3">
+        <div className="md:hidden absolute left-0 top-full w-full bg-white p-4 rounded-b shadow-lg flex flex-col gap-3 z-50">
           {categorias.map((categoria) => (
             <Link
               key={categoria}
@@ -88,8 +91,8 @@ export default function Navbar({ carrinhoCount }: NavbarProps) { // removido cli
             </Link>
           ))}
 
-          <div className="flex items-center justify-between border-t pt-4">
-            <span className="px-3 py-1 rounded">Olá, seja bem vindo</span>
+          <div className="flex items-center justify-start gap-3 border-t pt-4 max-w-xs mx-auto">
+            <span className="px-2 py-1 rounded">Olá, bem vindo</span>
 
             <Link
               to="/cart"

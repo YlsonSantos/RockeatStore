@@ -1,4 +1,4 @@
-# RocketCommerce
+# 🚀 RocketStore
 
 RocketCommerce é uma aplicação de e-commerce simples e funcional feita com React e TypeScript, que oferece navegação entre páginas, gerenciamento de carrinho com controle de quantidade de produtos, interface moderna e responsiva, estilizada com Tailwind CSS e animada com Framer Motion, proporcionando uma experiência intuitiva e prática para o usuário.
 

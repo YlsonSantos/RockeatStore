@@ -161,7 +161,7 @@ export default function Home({
                   {"<"}
                 </button>
 
-                <div className="flex gap-4 overflow-hidden px-12">
+                <div className="flex gap-4 overflow-hidden px-12 justify-center md:justify-start">
                   {visibles.map((produto) => (
                     <div
                       key={produto.id}

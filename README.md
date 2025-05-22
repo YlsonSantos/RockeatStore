@@ -43,7 +43,6 @@ pnpm install
 pnpm run dev
   ```
 4. Abra o navegador em `http://localhost:3000` para acessar a aplicação.
-  ```
 
 ## Como usar
 

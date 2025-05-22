@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ShoppingCart, Menu, X } from "lucide-react";
 
 interface NavbarProps {
-  carrinhoCount: number; 
+  carrinhoCount: number;
 }
 
 const categorias = [
@@ -24,7 +24,6 @@ export default function Navbar({ carrinhoCount }: NavbarProps) {
 
   return (
     <nav className="bg-white p-4 flex items-center text-red-600 border-b border-black relative">
-      
       <Link
         to="/"
         className="flex-shrink-0 px-3 py-1 rounded flex items-center mr-4"

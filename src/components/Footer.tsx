@@ -21,9 +21,9 @@ const Footer: React.FC = () => {
             Atendimento de segunda a sexta, das 9h às 18h.
           </p>
           <p className="text-sm text-gray-400 whitespace-pre-line">
-            WhatsApp: (xx) xxxx-xxxx{"\n"}
-            Facebook: facebook.com/suaempresa{"\n"}
-            Instagram: instagram.com/suaempresa
+            WhatsApp: (81) xxxx-xxxx{"\n"}
+            Facebook: facebook.com/RocketStore{"\n"}
+            Instagram: instagram.com/RocketStore
           </p>
         </div>
       </div>

@@ -16,7 +16,7 @@ interface ModalProps {
 export default function Modal({ produto, onClose, adicionarAoCarrinho }: ModalProps) {
   return (
     <div
-      className="fixed inset-0 bg-gradient-to-br from-black/70 via-gray-900/80 to-black/70 flex items-center justify-center z-50 p-4"
+      className="fixed inset-0 bg-gradient-to-br from-black/70 via-gray-900/80 to-black-70 flex items-center justify-center z-50 p-4"
       onClick={onClose}
     >
       <div
@@ -47,7 +47,7 @@ export default function Modal({ produto, onClose, adicionarAoCarrinho }: ModalPr
             </h2>
 
             <p className="text-lg md:text-2xl font-extrabold text-green-700 mb-5 drop-shadow-md">
-              R$ {produto.preco.toFixed(2).replace('.', ',')}
+              R$ {produto.preco.toFixed(2).replace(".", ",")}
             </p>
 
             <p className="text-gray-700 leading-relaxed text-sm md:text-base whitespace-pre-wrap mb-6 font-light tracking-wide">

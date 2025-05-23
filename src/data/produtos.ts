@@ -779,7 +779,7 @@ const produtos: Produto[] = [
     id: 80,
     nome: "Pneu Aro 17 Continental",
     preco: 239,
-    descricao: "Tapete resistente e antiderrapante para carro",
+    descricao: "Pneu aro 17 da Continental, ideal para quem busca segurança, desempenho e durabilidade. Projetado com tecnologia avançada, garante excelente aderência em diferentes condições de pista, conforto na direção e menor ruído durante o uso. Compatível com veículos de médio e grande porte, como o Audi Q3.",
     imagem:
       "https://www.acheipneus.com.br/media/catalog/product/p/n/pneu-23555r17-contipremiumcontact-5-continental-99v-original-audi-q3-1.png?width=1200&height=1200&optimize=low",
     categoria: "Automotivo",
